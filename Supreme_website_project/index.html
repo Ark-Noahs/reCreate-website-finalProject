@@ -1,0 +1,63 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Example</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url("backgroundSkateBoarding.png");
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .enter-button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .enter-button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <h1>DISCLAIMER</h1>
+        <p>This project is for educational purposes only and I do not own any of the material shown on here.</p>
+        <a class="enter-button" href="home.html">Enter Site</a>
+    </div>
+</body>
+</html>
+
+

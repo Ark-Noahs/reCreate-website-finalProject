@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="logo-time-container">
+            <div class="logo">
+                <img src="ogBoxLogo.png" alt="Supreme Logo" width="200">
+            </div>
+            <div class="time" id="current-time"></div>
+        </div>
+
+        <!-- Buttons container -->
+        <div class="buttons-container">
+            <a href="stores.html" class="clear-button">Stores</a>
+            <a href="news.html" class="clear-button">News</a>
+            <a href="pastHype.html" class="clear-button">Past Hype</a>
+            <a href="random.html" class="clear-button">Random</a>
+            <a href="history.html" class="clear-button">History of Supreme</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the current time
+        function updateTime() {
+            const currentTime = new Date().toLocaleString("en-US", {
+                timeZone: "America/Chicago",
+                hour12: true,
+                timeStyle: "long",
+                dateStyle: "short" // Adjust dateStyle to "short"
+            });
+
+            document.getElementById("current-time").textContent = currentTime;
+        }
+
+        // Update time initially and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

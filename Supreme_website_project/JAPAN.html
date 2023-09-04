@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Japan</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to your common CSS file -->
+</head>
+<body class="stores">
+    <div class="overlay"></div>
+    <div class="content japan-content">
+        <div class="logo-time-container">
+          <div class="logo">
+            <img src="supremeJapanLogo.jpeg" alt="Supreme Japan Logo" width="200">
+          </div>
+          <div class="time" id="current-time"></div>
+        </div>
+        <div class="japan-info">
+          <!-- Your paragraph content goes here -->
+          <p>
+            <br>
+            Supreme Shibuya<br>
+            1-18-2 Jinnan, Shibuya-ku<br>
+            03-5428-4393<br>
+            <br>
+            Supreme Osaka<br>
+            1-9-8 Minamihorie, Nishi-ku<br>
+            06-6533-0705<br>
+            <br>
+            Supreme Fukuoka<br>
+            1-15-35 Daimyo, Chuo-Ku<br>
+            092-732-5002<br>
+            <br>
+            Supreme Harajuku<br>
+            4-32-7-2F Jingumae, Shibuya-Ku<br>
+            03-5771-0090<br>
+            <br>
+            Supreme Daikanyama<br>
+            1-6 Daikanyama-Cho, Shibuya-Ku<br>
+            03-5456-0085<br>
+            <br>
+            Supreme Nagoya<br>
+            3-13-28 Sakae, Naka-Ku, Nagoya<br>
+            052-261-2858
+            
+          </p>
+        </div>
+      </div>   
+    </div>
+
+    <script>
+        // Function to update the current time
+        function updateTime() {
+            const currentTime = new Date().toLocaleString("en-US", {
+                timeZone: "Asia/Tokyo", // Set the time zone to Tokyo
+                hour12: true,
+                timeStyle: "long",
+                dateStyle: "short" // Adjust dateStyle to "short"
+            });
+    
+            document.getElementById("current-time").textContent = currentTime;
+        }
+    
+        // Update time initially and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

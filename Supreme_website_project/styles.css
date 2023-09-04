@@ -1,0 +1,230 @@
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the background image and overlay */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("backgroundSkateBoarding.png");
+  background-size: cover;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Style for the overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+/* Style for the content */
+.content {
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: flex-start; /* Align items to the start vertically */
+  padding-top: 20px; /* Adjust top padding for spacing */
+}
+
+/* Style for the logo */
+.logo {
+  position: relative;
+  z-index: 3;
+  margin-bottom: 0px; /* Adjust the spacing */
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Style for the time/date */
+.time {
+  font-size: 15px;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+/* Style for the buttons container */
+.buttons-container {
+  display: flex;
+  flex-direction: column; /* Change to column to stack buttons vertically */
+  align-items: center;
+  margin-top: -350px; /* Adjust the spacing */
+}
+
+/* Style for the clear background buttons */
+.clear-button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  outline: none;
+  margin: 1px; /* Add margin for spacing between buttons */
+}
+
+.clear-button:hover {
+  background-color: rgb(245, 14, 14); /* Add a subtle hover effect */
+}
+
+
+/* Style for the Stores page background */
+body.stores {
+  background-image: url("supremeJapanStore.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Style for the overlay on the Stores page */
+body.stores .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.logo-time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 400px; /* Adjust the spacing */
+}
+
+/* Style for the logo */
+.logo {
+  position: relative;
+  z-index: 3;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Style for the time/date */
+.time {
+  font-size: 15px;
+  color: white;
+  position: relative;
+  z-index: 2;
+  font-family: "Roboto Mono", monospace; /* Apply the desired font */
+}
+
+/* Your existing styles here */
+
+/* Style for the Stores page background */
+body.stores {
+  background-image: url("storeBackground.jpg"); /* Set background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Style for the overlay on the Stores page */
+body.stores .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.logo-time-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 400px; /* Adjust the spacing */
+}
+
+/* Style for the logo */
+.logo-time-container .logo {
+  position: relative;
+  z-index: 3;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Style for the time/date */
+.logo-time-container .time {
+  font-size: 15px;
+  color: white;
+  position: relative;
+  z-index: 2;
+  font-family: "Roboto Mono", monospace; /* font*/
+}
+
+.usa-content {
+  max-height: 80vh; /* Limit the maximum height of the content */
+  overflow-y: hidden; /* Add vertical scroll if necessary */
+}
+
+/* Adjust margin to move the image vertically */
+.usa-info {
+  margin-top: -420px; /* moves the paragraph up and down the page */
+}
+
+
+
+/* Style for the euro.html content */
+.euro-content {
+  display: block;
+  max-height: 100vh;
+  overflow-y:hidden;
+  margin: 0 auto 0px; /* Center the logo and add margin */
+}
+
+/* Adjust margin to move the paragraph */
+.euro-info {
+  margin-top: -420px; /* Adjust this value to move the content up or down */
+  text-align: center; /* Center-align the paragraph */
+  font-family: "Roboto Mono", monospace; /* Apply the desired font */
+  font-size: 14px; /* Adjust the font size */
+}
+
+/* Style for the japan.html content */
+.japan-content {
+  max-height: 100vh; /* Limit the maximum height of the content */
+  overflow-y: hidden; /* Add vertical scroll if necessary */
+}
+
+/* Adjust margin to move the image and paragraph vertically */
+.japan-info {
+  margin-top: -420px; /* Adjust this value to move the content up or down */
+  text-align: center; /* Center-align the paragraph */
+  font-family: "Roboto Mono", monospace; /* Apply the desired font */
+  font-size: 14px; /* Adjust the font size */
+}
+
+body.history {
+  background-image: url("mikeTyson.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+body.history .overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body.pastHype {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("supremeSign.jpg");
+  background-size: cover;
+  font-family: "Roboto Mono", monospace;
+  position: relative; /* Make sure to set position to relative */
+}
+
+body.pastHype::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* Black tint with opacity */
+  z-index: -1; /* Place the overlay behind the content */
+}

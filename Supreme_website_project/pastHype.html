@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Past Hype</title>
+        <!-- Link to your common CSS file -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        
+        <!-- Add specific styles for the "pastHype" page -->
+        <style>
+            /* Reset margin and padding for the body element */
+            body {
+                margin: 0;
+                padding: 0;
+                /* Set the background color to black */
+                background-color: black;
+                /* Center content vertically and horizontally */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* Set a minimum height of 100vh to fill the viewport */
+                min-height: 100vh;
+                /* Use the "Roboto Mono" font and set text color to white */
+                font-family: "Roboto Mono", monospace;
+                color: white;
+            }
+        
+            /* Container for the slideshow */
+            .slideshow-container {
+                position: relative;
+                max-width: 800px;
+                width: 100%;
+            }
+        
+            /* Style for the slideshow images */
+            .slideshow-image {
+                display: none; /* Hide the images by default */
+                width: 100%;
+                /* Limit the maximum height of the images */
+                max-height: 400px;
+                /* Maintain aspect ratio while fitting the image */
+                object-fit: contain;
+            }
+        
+            /* Style for the description of each slide */
+            .slide-description {
+                text-align: center;
+                margin-top: 10px;
+            }
+        
+            /* Styles for the previous and next buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%; /* Position buttons in the middle vertically */
+                transform: translateY(-50%);
+                font-size: 20px;
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            }
+        
+            /* Position the previous button on the left */
+            .prev {
+                left: 0;
+            }
+        
+            /* Position the next button on the right */
+            .next {
+                right: 0;
+            }
+
+                    /* Add styles for the black tint overlay */
+        body.pastHype {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url("supremeSign.jpg");
+            background-size: cover;
+            font-family: "Roboto Mono", monospace;
+            position: relative; /* Make sure to set position to relative */
+        }
+        
+        body.pastHype::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Black tint with opacity */
+            z-index: -1; /* Place the overlay behind the content */
+        }
+
+        /* Styles for the previous and next buttons */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /* Position buttons in the middle vertically */
+            transform: translateY(-50%);
+            font-size: 20px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            color: white; /* Initial color for the arrows */
+            transition: color 0.3s; /* Add a smooth transition effect for the color change */
+        }
+
+        /* Hover styles for the previous and next buttons */
+        .prev:hover, .next:hover {
+            color: red; /* Change the color to red on hover */
+        }
+
+
+        </style>
+    </head>
+
+    <body class="pastHype">
+    
+        <div class="slideshow-container">
+        <img class="slideshow-image" src="PH3.jpg" alt="BoxLogo Covid Relief">
+        <img class="slideshow-image" src="PH2.jpg" alt="Red Bandana BoxLogo">
+        <img class="slideshow-image" src="PH1.jpg" alt="Boxlogo split Tee">
+        <img class="slideshow-image" src="PH4.png" alt="North Face Parka Mt. Everest">
+        <img class="slideshow-image" src="PH5.jpg" alt="NEIL YOUNG TEE Boxlogo">
+        <img class="slideshow-image" src="PH6.jpg" alt="BoxLogo USA hoodie">
+        <img class="slideshow-image" src="PH7.jpg" alt="Three 6 Mafia TEE Boxlogo">
+        <img class="slideshow-image" src="PH8.jpg" alt="Tiffany Co boxlogo">
+        <img class="slideshow-image" src="PH9.jpg" alt="Burrberry BoxLogo" >
+        <img class="slideshow-image" src="PH10.jpeg" alt="Supreme LV hoodie" >
+        <!-- Add more image elements with the corresponding src and alt attributes -->
+        
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+        
+        <div class="slide-description">Description of the current image</div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const images = document.querySelectorAll('.slideshow-image');
+        const descriptions =
+         ["COVID-19 RELIEF BoxLogo(100% of proceeds went to HELP USA)",
+         "Red Bandana BoxLogo ", 
+         "SUPREME®/COMME DES GARÇONS SHIRT® SPLIT BoxLogo",
+         "SUPREME®/THE NORTH FACE® MOUNTAIN PARKA",
+         "NEIL YOUNG BoxLogo Tee",
+         "Supreme® USA Box Logo Hoodie",
+         "THREE SIX MAFIA BoxLogo Tee", 
+         "SUPREME®/TIFFANY&CO. BoxLogo",
+         "SUPREME®/BURBERRY® BoxLogo",
+         "Supreme®/Louis Vutton BoxLogo Hoodie"
+        ];
+
+        function showSlide(slideIndex) {
+            if (slideIndex < 0) {
+                slideIndex = images.length - 1;
+            } else if (slideIndex >= images.length) {
+                slideIndex = 0;
+            }
+
+            images.forEach(image => image.style.display = 'none');
+            images[slideIndex].style.display = 'block';
+
+            document.querySelector('.slide-description').textContent = descriptions[slideIndex];
+            currentSlide = slideIndex;
+        }
+
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>

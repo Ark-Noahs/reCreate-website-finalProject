@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EURO</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to your common CSS file -->
+</head>
+<body class="stores">
+    <div class="overlay"></div>
+    <div class="content euro-content">
+        <div class="logo-time-container">
+          <div class="logo">
+            <img src="LondonLogo.png" alt="Supreme London Logo" width="200">
+          </div>
+          <div class="time" id="current-time"></div>
+        </div>
+        <div class="euro-info">
+          <!-- Your paragraph content goes here -->
+          <p>
+            <br><br>
+            Supreme London<br>
+            2/3 Peter St<br>
+            London W1F 0AA<br>
+            +44 207-437-0493<br>
+            <br>
+            Supreme Paris<br>
+            20 Rue BArbette<br>
+            Paris 75003<br>
+            +33 1 43 48 80 14<br>
+            <br>
+            Supreme Milan<br>
+            Corso Garibaldi 20<br>
+            20121 Milan<br>
+            +39 02 84349776<br>
+            <br>
+            Supreme Berlin<br>
+            Torstraße 74<br>
+            10119 Berlin<br>
+            +49 030 27013724
+          </p>
+        </div>
+      </div>   
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the current time
+        function updateTime() {
+            const currentTime = new Date().toLocaleString("en-US", {
+                timeZone: "Europe/London", // Set the time zone to London
+                hour12: true,
+                timeStyle: "long",
+                dateStyle: "short" // Adjust dateStyle to "short"
+            });
+    
+            document.getElementById("current-time").textContent = currentTime;
+        }
+    
+        // Update time initially and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
+
+

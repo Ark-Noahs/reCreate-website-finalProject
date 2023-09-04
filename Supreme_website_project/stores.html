@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stores</title>
+    <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link to your common CSS file -->
+</head>
+<body class="stores">
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="logo-time-container">
+            <div class="logo">
+                <img src="Akira_blackSun_logo.jpg" alt="Supreme Japan Logo" width="200">
+            </div>
+            <div class="time" id="current-time"></div>
+        </div>
+
+        <!-- Buttons container -->
+        <div class="buttons-container">
+            <a href="usa.html" class="clear-button">USA</a>
+            <a href="euro.html" class="clear-button">EURO</a>
+            <a href="japan.html" class="clear-button">JAPAN</a>
+        </div>
+    </div>
+
+    <script>
+        // Function to update the current time
+        function updateTime() {
+            const currentTime = new Date().toLocaleString("en-US", {
+                timeZone: "America/Chicago",
+                hour12: true,
+                timeStyle: "long",
+                dateStyle: "short" // Adjust dateStyle to "short"
+            });
+
+            document.getElementById("current-time").textContent = currentTime;
+        }
+
+        // Update time initially and then every second
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
